@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 62</title>
+</head>
+<body>
+  <script type = "text/javascript">
+    const mult = (x, y) => x * y;
+    const validateInput = x => {
+        if (isNaN(+x) || x.replace(/\s+/g, '') == ""|| x.length > 155) {
+          alert('Неверный формат введенного значения. Необходимо ввести число.\nДавайте попробуем ещё раз!');
+          return true;
+        }
+        return false;
+      }
+
+    let x = window.prompt('Введите число x: ');
+      while (validateInput(x)) {
+        x = window.prompt('Введите число x: ');
+      }
+
+    let y = window.prompt('Введите число y: ');
+      while (validateInput(y)) {
+        y = window.prompt('Введите число y: ');
+      }
+
+    const string = `The multiplying of ${x} and ${y} is ${mult(x, y)}.`
+    console.log(string);
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример 65</title>
+</head>
+<body>
+  <script type = "text/javascript">
+    function smart(model, year, price, memory, display, protect) {
+      this.model = model;
+      this.year = year;
+      this.price = price;
+      this.memory = memory;
+      this.display = display;
+      this.protect = protect;
+      this.show = function () {
+        for (let i in this) {
+          if (typeof this[i] !== 'function')
+          document.write(`${i}: ${this[i]}<br>`);
+          }
+        document.write(`<br>`);
+        }
+    }
+    let smart1 = new smart('Samsung Galaxy S22 Ultra', '2022', '2014$', '1TB', '6.8', 'IP68');
+    smart1.show();
+
+    let smart2 = new smart('ASUS ROG Phone 5s ZS676KS', '2021', '1169$', '512GB', '6.78', 'no info');
+    smart2.show();
+
+    let smart3 = new smart('OnePlus 10 Pro', '2022', '1169$', '256Gb', '6.7', 'IP68');
+    smart3.show();
+
+  </script>
+</body>
+</html>
